@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
-import {Beiruti } from "next/font/google"; // get arabic font
+import { Beiruti } from "next/font/google"; // get arabic font
 import "./globals.css";
-import { NavBar } from "@/components";
+import { NavBar, Footer } from "@/components";
 
 const beiruti = Beiruti({
   variable: "--font-beiruti",
@@ -19,12 +19,14 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body
-      dir="rtl"
-        className={` ${beiruti.variable} antialiased container mx-auto`}
-      >
-        <NavBar />
-        {children}
+      <body dir="rtl" className={` ${beiruti.variable} antialiased`}>
+        <div className="max-w-screen min-h-screen mx-10">
+          {/* nav bar */}
+          <NavBar />
+          {children}
+        </div>
+        {/* footer */}
+        <Footer />
       </body>
     </html>
   );

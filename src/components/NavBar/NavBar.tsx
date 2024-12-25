@@ -11,6 +11,7 @@ import { LuMapPinned } from "react-icons/lu";
 import { FaRegFilePdf } from "react-icons/fa";
 import { BsChatDots } from "react-icons/bs";
 import { IoRestaurantOutline } from "react-icons/io5";
+import Link from "next/link";
 
 interface Link {
   id: number;
@@ -65,7 +66,7 @@ const NavBar: React.FC = () => {
       class: "",
       icon: <IoRestaurantOutline />,
     },
-    { id: 2, name: "فروعنا", href: "/", class: "", icon: <LuMapPinned /> },
+    { id: 2, name: "فروعنا", href: "/branches", class: "", icon: <LuMapPinned /> },
     {
       id: 3,
       name: "الشروط والأحكام",
@@ -103,19 +104,19 @@ const NavBar: React.FC = () => {
                   classname={`border-0 bg-transparent text-gray-700 text-xl mx-2 ${link.class}`}
                 />
               ) : (
-                <a
+                <Link
                   key={link.id}
                   href={link.href}
                   className={`flex justify-between gap-x-3 text-gray-700 text-xl hover:text-gray-900 ${link.class} border-gray-500 px-5 min-w-fit`}
                   aria-label={link.name}
                 >
                   {link.name} <span>{link.icon}</span>
-                </a>
+                </Link>
               )
             )}
 
             {/* btn primary */}
-            <a href="/order-now">
+            <Link href="/order-now">
               <Button
                 text="تسوق الان"
                 type="button"
@@ -123,7 +124,7 @@ const NavBar: React.FC = () => {
                 icon={<MdFoodBank />}
                 iconClass="text-xl"
               />
-            </a>
+            </Link>
             {/* mobile nav */}
             <FaBarsStaggered className="md:hidden text-3xl text-gray-700" />
           </div>
@@ -133,12 +134,12 @@ const NavBar: React.FC = () => {
       <div className="hidden lg:flex justify-between gap-x-3 bg-primary p-3 rounded-2xl items-center mb-3">
         {navBLinks.map((link, index) => (
           <React.Fragment key={link.id}>
-            <a
+            <Link
               href={link.href}
               className={`flex items-center justify-between gap-x-5 text-white text-xl hover:text-secondery ${link.class}`}
             >
               {link.name} <span>{link.icon}</span>
-            </a>
+            </Link>
             {index !== navBLinks.length - 1 && (
               <span className="text-white text-xl">|</span>
             )}

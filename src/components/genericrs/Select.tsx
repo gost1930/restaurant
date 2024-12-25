@@ -1,7 +1,7 @@
 import React from "react";
 interface SelectProps {
   name: string;
-  id: string;
+  id?: string;
   classname?: string;
   onclick?: (event: React.MouseEvent<HTMLSelectElement>) => void;
   onchange?: (event: React.ChangeEvent<HTMLSelectElement>) => void;
