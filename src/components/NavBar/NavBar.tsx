@@ -1,4 +1,5 @@
-import React from "react";
+"use client";
+import React, { useState } from "react";
 import Image from "next/image";
 // components
 import { Select, Button } from "../index";
@@ -29,7 +30,7 @@ interface Language {
 
 const NavBar: React.FC = () => {
   const links: Link[] = [
-    { id: 1, name: "اللغة", href: "#", class: "hidden md:flex", icon: "" },
+    { id: 1, name: "اللغة", href: "#", class: "", icon: "" },
     {
       id: 2,
       name: "تسجيل الدخول",
@@ -66,7 +67,13 @@ const NavBar: React.FC = () => {
       class: "",
       icon: <IoRestaurantOutline />,
     },
-    { id: 2, name: "فروعنا", href: "/branches", class: "", icon: <LuMapPinned /> },
+    {
+      id: 2,
+      name: "فروعنا",
+      href: "/branches",
+      class: "",
+      icon: <LuMapPinned />,
+    },
     {
       id: 3,
       name: "الشروط والأحكام",
@@ -76,11 +83,12 @@ const NavBar: React.FC = () => {
     },
     { id: 4, name: "تواصل معنا", href: "/", class: "", icon: <BsChatDots /> },
   ];
-
+  const [isNavOpen, setIsNavOpen] = useState(false);
+  const handleNavBarChange = () => setIsNavOpen(!isNavOpen);
   return (
-    <div className="flex flex-col gap-y-2">
+    <div className="flex flex-col gap-y-2 relative">
       {/* nav top */}
-      <div className="flex flex-col md:flex-row justify-between w-full h-fit">
+      <div className="flex flex-col md:flex-row justify-between w-full h-fit ">
         {/* logo */}
         <Image
           src="/assets/logo.svg"
@@ -92,7 +100,7 @@ const NavBar: React.FC = () => {
         />
 
         {/* nav links */}
-        <div className="flex justify-between w-full md:w-fit">
+        <div className="flex justify-between w-full md:w-fit relative">
           <div className="flex justify-between md:justify-normal w-full ml-3 items-center mt-5">
             {links.map((link) =>
               link.id === 1 ? (
@@ -101,13 +109,13 @@ const NavBar: React.FC = () => {
                   name="language"
                   id="language"
                   options={languages}
-                  classname={`border-0 bg-transparent text-gray-700 text-xl mx-2 ${link.class}`}
+                  classname={`border-0 bg-transparent text-gray-700 text-xl mx-2 hidden md:flex`}
                 />
               ) : (
                 <Link
                   key={link.id}
                   href={link.href}
-                  className={`flex justify-between gap-x-3 text-gray-700 text-xl hover:text-gray-900 ${link.class} border-gray-500 px-5 min-w-fit`}
+                  className={`flex justify-between gap-x-3 text-gray-700 text-xl hover:text-gray-900 ${link.class} md:border-x px-5 min-w-fit`}
                   aria-label={link.name}
                 >
                   {link.name} <span>{link.icon}</span>
@@ -125,8 +133,48 @@ const NavBar: React.FC = () => {
                 iconClass="text-xl"
               />
             </Link>
-            {/* mobile nav */}
-            <FaBarsStaggered className="md:hidden text-3xl text-gray-700" />
+            {/* mobile nav btn */}
+            <FaBarsStaggered className="md:hidden text-3xl text-gray-700" onClick={handleNavBarChange} />
+          </div>
+          {/* nav mobile */}
+          <div
+            className={` absolute md:hidden top-16 ${
+              isNavOpen ? "block" : "hidden"
+            } w-full h-screen bg-white z-50 duration-300 left-0`}
+          >
+            <div className="flex flex-col gap-y-3 p-3">
+              {
+                links.map((link) => (
+                  <div key={link.id} className="w-fit">
+                  {
+                    link.id === 1 &&(
+                      <Select
+                      key={link.id}
+                      name="language"
+                      id="language"
+                      options={languages}
+                      classname={`border-0 bg-transparent text-gray-700 text-xl mx-2 ${link.class}`}
+                    />
+                    )
+                  }
+                  </div>
+                ))
+              }
+              <div className="flex flex-col gap-y-5 w-fit text-xl">
+              {navBLinks.map((link) => (
+                <div key={link.id} >
+                  <Link
+                 
+                  href={link.href}
+                  onClick={handleNavBarChange}
+                  className={`flex items-center justify-between gap-x-5 text-gray-700 text-xl hover:text-secondery ${link.class}`}
+                >
+                  {link.name} <span>{link.icon}</span>
+                </Link>
+                </div>
+              ))}
+              </div>
+            </div>
           </div>
         </div>
       </div>
