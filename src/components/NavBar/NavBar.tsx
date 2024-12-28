@@ -33,7 +33,7 @@ const NavBar: React.FC = () => {
     {
       id: 2,
       name: "تسجيل الدخول",
-      href: "#",
+      href: "/login",
       class: "md:border-x",
       icon: <FaRegUser />,
     },

@@ -22,7 +22,7 @@ const AllBranches = () => {
       <hr className="border-zinc-400 border" />
 
       {/* branches */}
-      <div className="grid grid-cols-1 gap-4 mt-4 md:grid-cols-2 lg:grid-cols-3">
+      <div className="grid grid-cols-1 gap-7 mt-4 md:grid-cols-2 lg:grid-cols-3">
         {/* card */}
         {branches.map((item, index) => (
           <div
@@ -43,9 +43,8 @@ const AllBranches = () => {
 
             {/* Timing & Status */}
             <div className="flex items-center justify-evenly mt-4">
-              <p className="text-sm text-gray-500">23:50 - 11:00</p>
               <span
-                className={`px-3 py-1 text-lg font-semibold ${
+                className={`px-3 py-1  font-semibold ${
                   item.status === "OPEN"
                     ? "text-green-800 bg-green-200"
                     : "text-white bg-red-500"
@@ -53,15 +52,16 @@ const AllBranches = () => {
               >
                 {item.status === "OPEN" ? "مفتوح" : "مغلق"}
               </span>
+              <p className="text-sm text-gray-500">11:00:00 - 23:50:00</p>
             </div>
 
             {/* Action Buttons */}
             <div className="flex flex-row-reverse justify-between mt-6">
-              <button className="flex items-center justify-center gap-x-2 w-1/2 px-3 py-2 text-sm font-medium text-orange-700 bg-orange-100 border border-orange-400 rounded-l-lg hover:bg-orange-200">
+              <button className="flex items-center justify-center gap-x-2 w-1/2 px-3 py-2 text-sm font-medium text-secondery bg-secondery/10 border border-secondery rounded-l-lg hover:bg-secondery/30">
                 <LuMapPinned className="w-5 h-5 mr-2" />
                 الموقع
               </button>
-              <button className="flex items-center justify-center gap-x-2 w-1/2 px-3 py-2 text-sm font-medium text-white bg-orange-500 rounded-r-lg hover:bg-orange-600">
+              <button className="flex items-center justify-center gap-x-2 w-1/2 px-3 py-2 text-sm font-medium text-white bg-secondery rounded-r-lg hover:bg-secondery">
                 <FaPhoneAlt className="w-5 h-5 mr-2" />
                 الاتصال
               </button>

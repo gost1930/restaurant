@@ -19,8 +19,8 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body dir="rtl" className={` ${beiruti.variable} antialiased`}>
-        <div className="max-w-screen min-h-screen mx-10">
+      <body dir="rtl" className={` ${beiruti.variable} antialiased max-w-screen min-h-screen`}>
+        <div className="max-w-screen min-h-screen md:mx-20">
           {/* nav bar */}
           <NavBar />
           {children}

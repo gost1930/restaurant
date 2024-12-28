@@ -15,6 +15,7 @@ const MainCarousel = () => {
       <Swiper
         direction="horizontal"
         loop={true}
+        autoplay={{ delay:1000 }}
         pagination={{
           clickable: true,
           el: ".custom-pagination",
@@ -27,7 +28,7 @@ const MainCarousel = () => {
         className="mySwiper rounded-2xl"
       >
         {images.map((image, index) => (
-          <SwiperSlide key={index} className="w-full rounded-2xl bg-cover bg-no-repeat min-h-[45vh] bg-center" style={{backgroundImage: `url(${image})` , width: "100%"}}>
+          <SwiperSlide key={index} className="w-full rounded-2xl bg-cover bg-no-repeat min-h-[70vh] bg-center" style={{backgroundImage: `url(${image})` , width: "100%"}}>
             {/* <Image
               key={index}
               src={image}
@@ -41,10 +42,10 @@ const MainCarousel = () => {
       </Swiper>
 
       {/* Custom Navigation Buttons */}
-      <button className="custom-prev absolute top-1/2 left-3 transform -translate-y-1/2 z-10 bg-gray-600/50 hover:bg-gray-600/80 text-white px-4 aspect-square rounded-full shadow-lg hover:bg-blue-500">
+      <button className="custom-next absolute top-1/2 left-3 transform -translate-y-1/2 z-10 bg-gray-600/50 hover:bg-gray-600/80 text-white px-4 aspect-square rounded-full shadow-lg hover:bg-blue-500">
         &#10095;{/* Left arrow icon */}
       </button>
-      <button className="custom-next absolute top-1/2 right-3 transform -translate-y-1/2 z-10 bg-gray-600/50 hover:bg-gray-600/80 text-white px-4 aspect-square rounded-full shadow-lg hover:bg-blue-500">
+      <button className="custom-prev absolute top-1/2 right-3 transform -translate-y-1/2 z-10 bg-gray-600/50 hover:bg-gray-600/80 text-white px-4 aspect-square rounded-full shadow-lg hover:bg-blue-500">
         &#10094;{/* Right arrow icon */}
       </button>
 
