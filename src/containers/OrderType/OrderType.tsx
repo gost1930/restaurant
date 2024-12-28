@@ -13,7 +13,7 @@ const OrderType = () => {
     {
       id: 1,
       name: "إستلام من الفرع",
-      href: "/order-now",
+      href: "/branch",
       image: "/assets/1.svg",
     },
     {

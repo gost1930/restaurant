@@ -5,7 +5,14 @@ interface SelectProps {
   classname?: string;
   onclick?: (event: React.MouseEvent<HTMLSelectElement>) => void;
   onchange?: (event: React.ChangeEvent<HTMLSelectElement>) => void;
-  options: {id?: number; label: string; value: string }[];
+  options: {
+    id?: number;
+    label: string;
+    value: string;
+    latitude: string;
+    longitude: string;
+  }[];
+  onclickOption?: (event: React.MouseEvent<HTMLOptionElement>) => void;
 }
 const Select: React.FC<SelectProps> = ({
   name,
@@ -14,6 +21,7 @@ const Select: React.FC<SelectProps> = ({
   onchange,
   onclick,
   options,
+  onclickOption,
 }) => {
   return (
     <select
@@ -24,7 +32,12 @@ const Select: React.FC<SelectProps> = ({
       id={id}
     >
       {options.map((option, index) => (
-        <option key={index} value={option.value} className=" cursor-pointer">
+        <option
+          key={index}
+          value={option.latitude + "," + option.longitude}
+          onClick={onclickOption}
+          className=" cursor-pointer"
+        >
           {option.label}
         </option>
       ))}

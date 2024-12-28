@@ -6,3 +6,4 @@ export {default as Button} from "./genericrs/Button";
 export {default as Footer} from './Footer/Footer';
 export {default as MainLogin} from './MainLogin/MainLogin';
 export {default as Modal} from "./genericrs/Modal";
+export {default as Cart} from "./genericrs/Cart";

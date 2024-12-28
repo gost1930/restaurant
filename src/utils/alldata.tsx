@@ -1,25 +1,22 @@
+// خط العرض (Latitude)
+// خط الطول (Longitude)
 export const city = [
-  { id: 1, value: "الرياض", label: "الرياض" },
-  { id: 2, value: "جدة", label: "جدة" },
-  { id: 3, value: "الدمام", label: "الدمام" },
-  { id: 4, value: "الخبر", label: "الخبر" },
-  { id: 5, value: "القصيم", label: "القصيم" },
-  { id: 6, value: "الطائف", label: "الطائف" },
-  { id: 7, value: "مكة", label: "مكة" },
-  { id: 8, value: "الطائف", label: "الطائف " },
-  { id: 9, value: "المدينة", label: "المدينة" },
-  { id: 10, value: "الجبيل", label: "الجبيل" },
-  { id: 11, value: "الخرج", label: "الخرج" },
-  { id: 12, value: "الظهران", label: "الظهران" },
-  { id: 13, value: "الجوف", label: "الجوف" },
-  { id: 14, value: "الحفر", label: "الحفر" },
-  { id: 15, value: "الباحة", label: "الباحة" },
-  { id: 16, value: "الجوف", label: "الجوف" },
-  { id: 17, value: "الحفر", label: "الحفر" },
-  { id: 18, value: "الباحة", label: "الباحة" },
-  { id: 19, value: "الجوف", label: "الجوف" },
-  { id: 20, value: "الحفر", label: "الحفر" },
+  { id: 1, value: "الرياض", label: "الرياض", latitude: "24.7136", longitude: "46.6753" },
+  { id: 2, value: "جدة", label: "جدة", latitude: "21.4858", longitude: "39.1925" },
+  { id: 3, value: "الدمام", label: "الدمام", latitude: "26.3927", longitude: "49.9777" },
+  { id: 4, value: "الخبر", label: "الخبر", latitude: "26.2172", longitude: "50.1971" },
+  { id: 5, value: "القصيم", label: "القصيم", latitude: "26.2065", longitude: "43.4888" },
+  { id: 6, value: "الطائف", label: "الطائف", latitude: "21.2854", longitude: "40.4259" },
+  { id: 7, value: "مكة", label: "مكة", latitude: "21.3891", longitude: "39.8579" },
+  { id: 8, value: "المدينة", label: "المدينة", latitude: "24.5247", longitude: "39.5692" },
+  { id: 9, value: "الجبيل", label: "الجبيل", latitude: "27.0036", longitude: "49.6605" },
+  { id: 10, value: "الخرج", label: "الخرج", latitude: "24.1556", longitude: "47.3128" },
+  { id: 11, value: "الظهران", label: "الظهران", latitude: "26.3032", longitude: "50.1218" },
+  { id: 12, value: "الجوف", label: "الجوف", latitude: "29.9700", longitude: "40.2058" },
+  { id: 13, value: "الحفر", label: "الحفر", latitude: "28.4345", longitude: "45.9632" },
+  { id: 14, value: "الباحة", label: "الباحة", latitude: "20.0129", longitude: "41.4677" },
 ];
+
 
 // branches data
 export const branches = [

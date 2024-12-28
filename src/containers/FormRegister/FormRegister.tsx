@@ -100,11 +100,12 @@ const FormRegister = () => {
 
       <div className="flex flex-col gap-2 w-full">
         <span className="text-xl text-zinck-700">لديك حساب؟</span>
-        <Button
-          type="button"
-          text="مرحبا بعودتك"
-          classname="bg-secondery/10 text-xl py-3 text-secondery w-full hover:bg-secondery/20 text-center rounded-xl hover:-translate-y-2 duration-300 hover:shadow-lg hover:shadow-secondery border border-secondery"
-        />
+        <Link
+          href={'/login'}
+          className="bg-secondery/10 text-xl py-3 text-secondery w-full hover:bg-secondery/20 text-center rounded-xl hover:-translate-y-2 duration-300 hover:shadow-lg hover:shadow-secondery border border-secondery"
+        >
+           سجل بحسابك الحالي ..
+        </Link>
       </div>
       {/* modal */}
       <Modal
