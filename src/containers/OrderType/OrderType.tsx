@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 // icons
 import { IoIosArrowBack } from "react-icons/io";
 
@@ -41,7 +42,7 @@ const OrderType = () => {
         {/* cards */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mt-5 translate-y-16">
           {orderTypes.map((orderType, index) => (
-            <a
+            <Link
               href={orderType.href}
               key={index}
               className="flex border flex-col justify-between hover:-translate-y-2 duration-300 hover:shadow-xl rounded-3xl shadow bg-white cursor-pointer group overflow-hidden"
@@ -61,9 +62,9 @@ const OrderType = () => {
                   <IoIosArrowBack />
                 </span>
               </button>
-            </a>
+            </Link>
           ))}
-        </div> 
+        </div>
       </div>
     </div>
   );

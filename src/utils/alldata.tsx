@@ -1,22 +1,105 @@
 // خط العرض (Latitude)
 // خط الطول (Longitude)
 export const city = [
-  { id: 1, value: "الرياض", label: "الرياض", latitude: "24.7136", longitude: "46.6753" },
-  { id: 2, value: "جدة", label: "جدة", latitude: "21.4858", longitude: "39.1925" },
-  { id: 3, value: "الدمام", label: "الدمام", latitude: "26.3927", longitude: "49.9777" },
-  { id: 4, value: "الخبر", label: "الخبر", latitude: "26.2172", longitude: "50.1971" },
-  { id: 5, value: "القصيم", label: "القصيم", latitude: "26.2065", longitude: "43.4888" },
-  { id: 6, value: "الطائف", label: "الطائف", latitude: "21.2854", longitude: "40.4259" },
-  { id: 7, value: "مكة", label: "مكة", latitude: "21.3891", longitude: "39.8579" },
-  { id: 8, value: "المدينة", label: "المدينة", latitude: "24.5247", longitude: "39.5692" },
-  { id: 9, value: "الجبيل", label: "الجبيل", latitude: "27.0036", longitude: "49.6605" },
-  { id: 10, value: "الخرج", label: "الخرج", latitude: "24.1556", longitude: "47.3128" },
-  { id: 11, value: "الظهران", label: "الظهران", latitude: "26.3032", longitude: "50.1218" },
-  { id: 12, value: "الجوف", label: "الجوف", latitude: "29.9700", longitude: "40.2058" },
-  { id: 13, value: "الحفر", label: "الحفر", latitude: "28.4345", longitude: "45.9632" },
-  { id: 14, value: "الباحة", label: "الباحة", latitude: "20.0129", longitude: "41.4677" },
+  {
+    id: 1,
+    value: "الرياض",
+    label: "الرياض",
+    latitude: "24.7136",
+    longitude: "46.6753",
+  },
+  {
+    id: 2,
+    value: "جدة",
+    label: "جدة",
+    latitude: "21.4858",
+    longitude: "39.1925",
+  },
+  {
+    id: 3,
+    value: "الدمام",
+    label: "الدمام",
+    latitude: "26.3927",
+    longitude: "49.9777",
+  },
+  {
+    id: 4,
+    value: "الخبر",
+    label: "الخبر",
+    latitude: "26.2172",
+    longitude: "50.1971",
+  },
+  {
+    id: 5,
+    value: "القصيم",
+    label: "القصيم",
+    latitude: "26.2065",
+    longitude: "43.4888",
+  },
+  {
+    id: 6,
+    value: "الطائف",
+    label: "الطائف",
+    latitude: "21.2854",
+    longitude: "40.4259",
+  },
+  {
+    id: 7,
+    value: "مكة",
+    label: "مكة",
+    latitude: "21.3891",
+    longitude: "39.8579",
+  },
+  {
+    id: 8,
+    value: "المدينة",
+    label: "المدينة",
+    latitude: "24.5247",
+    longitude: "39.5692",
+  },
+  {
+    id: 9,
+    value: "الجبيل",
+    label: "الجبيل",
+    latitude: "27.0036",
+    longitude: "49.6605",
+  },
+  {
+    id: 10,
+    value: "الخرج",
+    label: "الخرج",
+    latitude: "24.1556",
+    longitude: "47.3128",
+  },
+  {
+    id: 11,
+    value: "الظهران",
+    label: "الظهران",
+    latitude: "26.3032",
+    longitude: "50.1218",
+  },
+  {
+    id: 12,
+    value: "الجوف",
+    label: "الجوف",
+    latitude: "29.9700",
+    longitude: "40.2058",
+  },
+  {
+    id: 13,
+    value: "الحفر",
+    label: "الحفر",
+    latitude: "28.4345",
+    longitude: "45.9632",
+  },
+  {
+    id: 14,
+    value: "الباحة",
+    label: "الباحة",
+    latitude: "20.0129",
+    longitude: "41.4677",
+  },
 ];
-
 
 // branches data
 export const branches = [
@@ -106,3 +189,120 @@ export const branches = [
     status: "OPEN",
   },
 ];
+
+export const categoriesData = [
+  {
+    _id: 0,
+    category: "جديدنا",
+    catData: [
+      { id: 1, name: "الوجبة العائلية", price: 120, image: "" },
+      { id: 2, name: "مشويات لحم", price: 120, image: "" },
+      { id: 3, name: "مشويات مشكلة", price: 120, image: "" },
+
+    ],
+  },
+  {
+    _id: 1,
+    category: "بوكسات الرومانسية",
+    catData: [
+      { id: 1, name: "الوجبة العائلية", price: 120, image: "" },
+      { id: 2, name: "الوجبة العائلية", price: 120, image: "" },
+      { id: 3, name: "الوجبة العائلية", price: 120, image: "" },
+    ],
+  },
+  {
+    _id: 2,
+    category: "منيو الجمعات",
+    catData: [
+      { id: 1, name: "الوجبة غعهفعهخفعهخفعخهفع", price: 120, image: "" },
+      { id: 2, name: "الوجبة العائلية", price: 120, image: "" },
+
+    ],
+  },
+  {
+    _id: 3,
+    category: "عروض عوافي",
+    catData: [
+      { id: 1, name: "الوجبة العائلية", price: 120, image: "" },
+      { id: 2, name: "الوجبة العائلية", price: 120, image: "" },
+      { id: 3, name: "الوجبة العائلية", price: 120, image: "" },
+      { id: 4, name: "الوجبة العائلية", price: 120, image: "" },
+      { id: 5, name: "الوجبة العائلية", price: 120, image: "" },
+      { id: 6, name: "الوجبة العائلية", price: 120, image: "" },
+      { id: 7, name: "الوجبة العائلية", price: 120, image: "" },
+      { id: 8, name: "الوجبة العائلية", price: 120, image: "" },
+      { id: 9, name: "الوجبة العائلية", price: 120, image: "" },
+      { id: 10, name: "الوجبة العائلية", price: 120, image: "" },
+      { id: 11, name: "الوجبة العائلية", price: 120, image: "" },
+      { id: 12, name: "الوجبة العائلية", price: 120, image: "" },
+    ],
+  },
+  {
+    _id:4,
+    category: "عروض عوافي",
+    catData: [
+      { id: 1, name: "الوجبة العائلية", price: 120, image: "" },
+      { id: 2, name: "الوجبة العائلية", price: 120, image: "" },
+      { id: 3, name: "الوجبة العائلية", price: 120, image: "" },
+      { id: 4, name: "الوجبة العائلية", price: 120, image: "" },
+      { id: 5, name: "الوجبة العائلية", price: 120, image: "" },
+      { id: 6, name: "الوجبة العائلية", price: 120, image: "" },
+      { id: 7, name: "الوجبة العائلية", price: 120, image: "" },
+      { id: 8, name: "الوجبة العائلية", price: 120, image: "" },
+      { id: 9, name: "الوجبة العائلية", price: 120, image: "" },
+      { id: 10, name: "الوجبة العائلية", price: 120, image: "" },
+      { id: 11, name: "الوجبة العائلية", price: 120, image: "" },
+      { id: 12, name: "الوجبة العائلية", price: 120, image: "" },
+    ],
+  },
+  {
+    _id: 5,
+    category: "اللحوم",
+    catData: [
+      { id: 1, name: "الوجبة العائلية", price: 120, image: "" },
+      { id: 2, name: "الوجبة العائلية", price: 120, image: "" },
+      { id: 3, name: "الوجبة العائلية", price: 120, image: "" },
+      { id: 4, name: "الوجبة العائلية", price: 120, image: "" },
+      { id: 5, name: "الوجبة العائلية", price: 120, image: "" },
+      { id: 6, name: "الوجبة العائلية", price: 120, image: "" },
+      { id: 7, name: "الوجبة العائلية", price: 120, image: "" },
+      { id: 8, name: "الوجبة العائلية", price: 120, image: "" },
+      { id: 9, name: "الوجبة العائلية", price: 120, image: "" },
+      { id: 10, name: "الوجبة العائلية", price: 120, image: "" },
+      { id: 11, name: "الوجبة العائلية", price: 120, image: "" },
+      { id: 12, name: "الوجبة العائلية", price: 120, image: "" },
+    ],
+  },
+  {
+    _id: 6,
+    category: "الدجاج",
+    catData: [
+      { id: 1, name: "الوجبة العائلية", price: 120, image: "" },
+      { id: 2, name: "الوجبة العائلية", price: 120, image: "" },
+      { id: 3, name: "الوجبة العائلية", price: 120, image: "" },
+      { id: 4, name: "الوجبة العائلية", price: 120, image: "" },
+      { id: 5, name: "الوجبة العائلية", price: 120, image: "" },
+      { id: 6, name: "الوجبة العائلية", price: 120, image: "" },
+      { id: 7, name: "الوجبة العائلية", price: 120, image: "" },
+      { id: 8, name: "الوجبة العائلية", price: 120, image: "" },
+      { id: 9, name: "الوجبة العائلية", price: 120, image: "" },
+      { id: 10, name: "الوجبة العائلية", price: 120, image: "" },
+      { id: 11, name: "الوجبة العائلية", price: 120, image: "" },
+      { id: 12, name: "الوجبة العائلية", price: 120, image: "" },
+    ],
+  },
+  {
+    _id: 7,
+    category: "المشويات",
+    catData: [
+      { id: 1, name: "الوجبة العائلية", price: 120, image: "" },
+      { id: 2, name: "الوجبة العائلية", price: 120, image: "" },
+      { id: 3, name: "الوجبة العائلية", price: 120, image: "" },
+      { id: 4, name: "الوجبة العائلية", price: 120, image: "" },
+
+    ],
+  },
+
+];
+
+

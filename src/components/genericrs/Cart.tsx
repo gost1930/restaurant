@@ -1,15 +1,20 @@
 import React from "react";
 import Image from "next/image";
+import Link from "next/link";
 // icons
 import { FaPhoneAlt } from "react-icons/fa";
 import { LuMapPinned } from "react-icons/lu";
+import { IoIosArrowBack } from "react-icons/io";
 
 interface CartComp {
   item: any;
+  actionBtn?: boolean;
+  linkBtn?: boolean;
+  className?:string;
 }
-const Cart = ({ item }: CartComp) => {
+const Cart = ({ item, actionBtn , linkBtn , className }: CartComp) => {
   return (
-    <div className="flex flex-col justify-center  p-4 shadow hover:-translate-y-3 hover:shadow-xl duration-300 rounded-2xl bg-white">
+    <div className={`flex flex-col justify-center  p-4 shadow hover:-translate-y-3 hover:shadow-xl duration-300 rounded-2xl bg-white ${className}`}>
       <Image
         src="/assets/banner.svg" // استبدل هذا بمسار الصورة الفعلي
         alt="فرع الروابي"
@@ -37,16 +42,29 @@ const Cart = ({ item }: CartComp) => {
       </div>
 
       {/* Action Buttons */}
-      <div className="flex flex-row-reverse justify-between mt-6">
-        <button className="flex items-center justify-center gap-x-2 w-1/2 px-3 py-2 text-sm font-medium text-secondery bg-secondery/10 border border-secondery rounded-l-lg hover:bg-secondery/30">
-          <LuMapPinned className="w-5 h-5 mr-2" />
-          الموقع
-        </button>
-        <button className="flex items-center justify-center gap-x-2 w-1/2 px-3 py-2 text-sm font-medium text-white bg-secondery rounded-r-lg hover:bg-secondery">
-          <FaPhoneAlt className="w-5 h-5 mr-2" />
-          الاتصال
-        </button>
-      </div>
+      {actionBtn && (
+        <div className="flex flex-row-reverse justify-between mt-6">
+          <button className="flex items-center justify-center gap-x-2 w-1/2 px-3 py-2 text-sm font-medium text-secondery bg-secondery/10 border border-secondery rounded-l-lg hover:bg-secondery/30">
+            <LuMapPinned className="w-5 h-5 mr-2" />
+            الموقع
+          </button>
+          <button className="flex items-center justify-center gap-x-2 w-1/2 px-3 py-2 text-sm font-medium text-white bg-secondery rounded-r-lg hover:bg-secondery">
+            <FaPhoneAlt className="w-5 h-5 mr-2" />
+            الاتصال
+          </button>
+        </div>
+      )}
+      {linkBtn && (
+        <Link
+          href="/menu"
+          className="flex items-center justify-center gap-x-2 w-full px-3 py-2 text-sm font-medium text-white bg-secondery rounded-lg hover:bg-secondery"
+        >
+          عرض الفرع
+          <span className="group-hover:-translate-x-1 duration-300">
+            <IoIosArrowBack />
+          </span>
+        </Link>
+      )}
     </div>
   );
 };

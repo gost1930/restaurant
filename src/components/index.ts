@@ -7,3 +7,4 @@ export {default as Footer} from './Footer/Footer';
 export {default as MainLogin} from './MainLogin/MainLogin';
 export {default as Modal} from "./genericrs/Modal";
 export {default as Cart} from "./genericrs/Cart";
+export {default as FoodCart} from "./FoodCart/FoodCart"

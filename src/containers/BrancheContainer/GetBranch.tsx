@@ -46,7 +46,6 @@ const GetBranch = () => {
       <Swiper
         spaceBetween={10}
         loop={true}
-        onSlideChange={() => console.log("slide change")}
         navigation={{
           nextEl: ".custom-next",
           prevEl: ".custom-prev",
@@ -58,15 +57,13 @@ const GetBranch = () => {
           },
           1000: {
             slidesPerView:3, // شاشة كبيرة (عرض 4 كروت)
-          },
-          1600: {
-            slidesPerView:4, // شاشة كبيرة (عرض 4 كروت)
-          },
+          }
         }}
+        className=""
       >
         {branches.map((item, index) => (
-          <SwiperSlide key={index}>
-            <Cart item={item} />
+          <SwiperSlide key={index} className="py-10 px-5">
+            <Cart item={item} linkBtn={true} className="min-h-full" />
           </SwiperSlide>
         ))}
         {/* أزرار التنقل */}

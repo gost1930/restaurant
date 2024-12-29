@@ -9,8 +9,8 @@ interface SelectProps {
     id?: number;
     label: string;
     value: string;
-    latitude: string;
-    longitude: string;
+    latitude?: string;
+    longitude?: string;
   }[];
   onclickOption?: (event: React.MouseEvent<HTMLOptionElement>) => void;
 }

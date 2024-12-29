@@ -22,7 +22,7 @@ const AllBranches = () => {
       <div className="grid grid-cols-1 gap-7 mt-4 md:grid-cols-2 lg:grid-cols-3">
         {/* card */}
         {branches.map((item, index) => (
-          <Cart key={index} item={item}  />
+          <Cart key={index} item={item} actionBtn={true}  />
         ))}
       </div>
     </div>
