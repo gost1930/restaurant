@@ -18,7 +18,7 @@ interface Link {
   id: number;
   name: string;
   href: string;
-  class: string;
+  class?: string;
   icon: React.ReactNode;
 }
 
@@ -30,19 +30,18 @@ interface Language {
 
 const NavBar: React.FC = () => {
   const links: Link[] = [
-    { id: 1, name: "اللغة", href: "#", class: "", icon: "" },
+    { id: 1, name: "اللغة", href: "#", icon: "" },
     {
       id: 2,
       name: "تسجيل الدخول",
       href: "/login",
-      class: "md:border-x",
+      class: "lg:border-x",
       icon: <FaRegUser />,
     },
     {
       id: 3,
       name: "سلتك",
-      href: "#",
-      class: "hidden md:flex",
+      href: "/cart",
       icon: <FiShoppingCart />,
     },
   ];
@@ -109,13 +108,17 @@ const NavBar: React.FC = () => {
                   name="language"
                   id="language"
                   options={languages}
-                  classname={`border-0 bg-transparent text-gray-700 text-xl mx-2 hidden md:flex`}
+                  classname={`border-0 bg-transparent text-gray-700 text-xl mx-2 hidden lg:flex`}
                 />
               ) : (
                 <Link
                   key={link.id}
                   href={link.href}
-                  className={`flex justify-between gap-x-3 text-gray-700 text-xl hover:text-gray-900 ${link.class} md:border-x px-5 min-w-fit`}
+                  className={`flex justify-between gap-x-3 text-gray-700 text-xl hover:text-gray-900 ${
+                    link.class
+                  } ${
+                    link.id !== 2 && "hidden lg:flex"
+                  } md:border-x px-5 min-w-fit`}
                   aria-label={link.name}
                 >
                   {link.name} <span>{link.icon}</span>
@@ -134,45 +137,54 @@ const NavBar: React.FC = () => {
               />
             </Link>
             {/* mobile nav btn */}
-            <FaBarsStaggered className="md:hidden text-3xl text-gray-700" onClick={handleNavBarChange} />
+            <FaBarsStaggered
+              className="lg:hidden text-3xl text-gray-700"
+              onClick={handleNavBarChange}
+            />
           </div>
           {/* nav mobile */}
           <div
-            className={` absolute md:hidden top-16 ${
+            className={` absolute lg:hidden top-16 ${
               isNavOpen ? "block" : "hidden"
             } w-full h-screen bg-white z-50 duration-300 left-0`}
           >
             <div className="flex flex-col gap-y-3 p-3">
-              {
-                links.map((link) => (
-                  <div key={link.id} className="w-fit">
-                  {
-                    link.id === 1 &&(
-                      <Select
+              {links.map((link) => (
+                <div key={link.id} className="w-fit">
+                  {link.id === 1 && (
+                    <Select
                       key={link.id}
                       name="language"
                       id="language"
                       options={languages}
                       classname={`border-0 bg-transparent text-gray-700 text-xl mx-2 ${link.class}`}
                     />
-                    )
-                  }
-                  </div>
-                ))
-              }
-              <div className="flex flex-col gap-y-5 w-fit text-xl">
-              {navBLinks.map((link) => (
-                <div key={link.id} >
-                  <Link
-                 
-                  href={link.href}
-                  onClick={handleNavBarChange}
-                  className={`flex items-center justify-between gap-x-5 text-gray-700 text-xl hover:text-secondery ${link.class}`}
-                >
-                  {link.name} <span>{link.icon}</span>
-                </Link>
+                  )}
+                  {link.id === 3 ? (
+                    <Link
+                      key={link.id}
+                      href={link.href}
+                      className={`flex items-center justify-between gap-x-5 text-gray-700 text-xl hover:text-secondery ${link.class}`}
+                      aria-label={link.name}
+                    >
+                      {link.name} <span>{link.icon}</span>
+                    </Link>
+                  ) : null}
                 </div>
               ))}
+              <div className="flex flex-col gap-y-5 w-fit text-xl">
+                {navBLinks.map((link) => (
+                  <div key={link.id}>
+                    <Link
+                      href={link.href}
+                      onClick={handleNavBarChange}
+                      className={`flex items-center justify-between gap-x-5 text-gray-700 text-xl hover:text-secondery ${link.class}`}
+                    >
+                      {link.name} <span>{link.icon}</span>
+                    </Link>
+                  </div>
+                ))}
+                sdf
               </div>
             </div>
           </div>
